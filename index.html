@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>wavebinder™</title>
+  <link rel="icon" href="favicon.png">
   <style>
     /* Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600&display=swap');
@@ -209,10 +210,32 @@
         font-size: 2.5rem;
       }
     }
+
+    /* Add the scale animation */
+    @keyframes logo-scale {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Style the logo */
+    header img {
+      width: 20%;
+      height: auto;
+      animation: logo-scale 3s infinite ease-in-out;
+      transition: width 0.3s ease;
+    }
+
+    /* Responsive logo adjustments */
+    @media (max-width: 768px) {
+      header img {
+        width: 40%;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="Wavebinder Logo"/>
     <h1>wavebinder™</h1>
     <p>A <span class="highlight">dependency manager</span> to simplify data relationships, so you can focus on business logic.</p>
     <div class="wave"></div>
@@ -243,7 +266,7 @@
         <button onclick="toggleDropdown()">Example #1</button>
         <div class="dropdown-content" id="dropdownMenu">
           <a href="http://robot-example-app.s3-website.us-east-2.amazonaws.com/">View App</a>
-          <a href="https://github.com/aem-progetti/angular-wave-binder-test/tree/robot-development">View Code</a>
+          <a href="https://github.com/wavebinder/wavebinder-robot-example">View Code</a>
         </div>
       </div>
     </div>
