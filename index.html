@@ -261,11 +261,17 @@
     </div>
 
     <div class="cta">
-      <button onclick="window.location.href='https://github.com/wavebinder/wavebinder-docs/blob/master/WaveBinder_ita_Brochure.pdf'">Brochure</button>
       <button onclick="window.location.href='https://wavebinder.github.io/wavebinder-docs/'">Documentation</button>
       <div class="dropdown">
-        <button onclick="toggleDropdown()">Example #1</button>
-        <div class="dropdown-content" id="dropdownMenu">
+        <button onclick="toggleDropdown(1)">Brochure</button>
+        <div class="dropdown-content dropdown-content-1" id="dropdownMenu-1">
+          <a href="https://github.com/wavebinder/wavebinder-docs/blob/master/WaveBinder_en_Brochure.pdf/">English</a>
+          <a href="https://github.com/wavebinder/wavebinder-docs/blob/master/WaveBinder_ita_Brochure.pdf/">Italian</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="toggleDropdown(2)">Example #1</button>
+        <div class="dropdown-content dropdown-content-2" id="dropdownMenu-2">
           <a href="http://robot-example-app.s3-website.us-east-2.amazonaws.com/">View App</a>
           <a href="https://github.com/wavebinder/wavebinder-robot-example">View Code</a>
         </div>
@@ -278,8 +284,8 @@
   </footer>
 
   <script>
-    function toggleDropdown() {
-      document.getElementById("dropdownMenu").classList.toggle("show");
+    function toggleDropdown(whichOne) {
+      document.getElementById("dropdownMenu-" + whichOne).classList.toggle("show");
     }
     // Close the dropdown if clicked outside
     window.onclick = function(event) {
